@@ -33,8 +33,8 @@
         (empty? e-b) (println "YOU WIN !")
         (empty? u-b) (println "YOU LOSE !")
         :else (recur
-                (logic/shoot u-b (rand-int 10) (rand-int 10))
-                (logic/shoot e-b (read-line) (read-line))
+                (logic/shoot u-b (rand-int 10) (rand-int 10) :enemy)
+                (logic/shoot e-b (read-line) (read-line) :user)
               )
         )
 
