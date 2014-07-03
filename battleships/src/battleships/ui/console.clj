@@ -14,7 +14,7 @@
     (doseq [y (range 0 10)]
       (cond (= x 0) (print " " y " ")
             (= y 0) (print " " x " ")
-            :else (print " " (logic/get-field boats x y) " ")))
+            :else (print " " (logic/get-field boats x y type) " ")))
         (println ""))
   )
 
@@ -28,13 +28,15 @@
           ]
       (print-dec :enemy e-b)
       (print-dec :user u-b)
-      (prn "Enemy: "e-b)
+      (print "Enemy: " e-b)
       (cond
-        (empty? e-b) (println "YOU WIN !")
-        (empty? u-b) (println "YOU LOSE !")
+        (not-any? true? (vals e-b)) (println "============\n YOU WIN ! \n============")
+        (not-any? true? (vals u-b)) (println "============\n YOU LOSE !\n============")
         :else (recur
-                (logic/shoot u-b (rand-int 10) (rand-int 10) :enemy)
-                (logic/shoot e-b (read-line) (read-line) :user)
+                (logic/shoot u-b (logic/one->nine) (logic/one->nine) :enemy)
+                (do
+                  (println "Fire !")
+                  (logic/shoot e-b (read-line) (read-line) :user))
               )
         )
 
