@@ -1,18 +1,14 @@
-# battleships
+# Battleships
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure game made for the [clojure course @ fmi](http://fmi.clojure.bg/).
 
 ## Usage
 
-`lein run -m battleships.core console` to run the console game
-`lein run -m battleships.core console` or `lein run` to run the GUI
+* `lein run -m battleships.core console` to run the console game
+
+* `lein run -m battleships.core gui` or just `lein run` to run the GUI
 
 ## License
-
-## TODO
-* HIT & MISS MESSAGE
-* RECUR after a hit
-* Different type of BOATS
 
 Copyright © 2014 FIXME
 

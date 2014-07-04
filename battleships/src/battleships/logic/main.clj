@@ -2,7 +2,8 @@
 
 (def all-ships
   "All ships possible to have on the field"
-  [{:type :big :size 3}
+  [{:type :big :size 4}
+   {:type :big :size 3}
    {:type :big :size 3}
    {:type :small :size 1}
    {:type :small :size 1}
